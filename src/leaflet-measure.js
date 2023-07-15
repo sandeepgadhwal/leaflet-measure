@@ -222,10 +222,13 @@ L.Control.Measure = L.Control.extend({
   },
   // set icon on the capture marker
   _setCaptureMarkerIcon: function() {
+    // disable autopan
+    this._captureMarker.options.autoPanOnFocus = false;
+    // default function
     this._captureMarker.setIcon(
-      L.divIcon({
-        iconSize: this._map.getSize().multiplyBy(2)
-      })
+        L.divIcon({
+            iconSize: this._map.getSize().multiplyBy(2)
+        })
     );
   },
   // format measurements to nice display string based on units in options
